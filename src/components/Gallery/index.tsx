@@ -7,9 +7,14 @@ import { photoService } from "modules/photo";
 import { IPhoto } from "../../modules/photo/photo.model";
 import "./style.scss";
 
+// галерею можно было реализовать и другим способом в плане верстки
+// (например создавать отдельный слайдер для полноразмерного изображения), но остановился на данном варианте,
+// когда используется один компонент
 const Gallery = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const windowScrollYRef = useRef(0);
+
+  // здесь можно было бы использовать, например react-query, но для данной задачи написал свой простой хук
   const state = useFetch<IPhoto[]>(photoService.getLatest, []);
 
   // useEffect(() => {
