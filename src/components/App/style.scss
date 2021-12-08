@@ -38,17 +38,10 @@ body._lock {
 }
 
 ._container-center {
-  //padding-left: 285px;
   max-width: 540px;
   width: 100%;
   margin: 0 auto;
 }
-
-//@media (max-width: 890px) {
-//  ._container-center {
-//    padding-left: 185px;
-//  }
-//}
 
 @media (max-width: $bp2) {
   ._container {
@@ -59,7 +52,6 @@ body._lock {
   }
 
   ._container-center {
-    //padding-left: 0;
     margin: 0;
   }
 }

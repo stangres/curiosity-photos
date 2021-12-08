@@ -49,8 +49,6 @@ const Slider: FC<SliderProps> = ({
 
   const _onSlideClick = () => {
     currentSliderRef.current = swiperRef.current.clickedIndex;
-    // console.log(swiperRef.current.clickedIndex);
-    // console.log(swiperRef.current.activeIndex);
     onSlideClick();
   };
 
@@ -65,7 +63,6 @@ const Slider: FC<SliderProps> = ({
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           slidesPerView={isFullscreen ? 1 : 3}
-          // spaceBetween={isFullscreen ? 0 : 30}
           breakpoints={breakpoints}
           freeMode={true}
           virtual={true}
@@ -80,11 +77,6 @@ const Slider: FC<SliderProps> = ({
               : false
           }
           slideToClickedSlide={true}
-          // centeredSlides={true}
-          // initialSlide={1}
-          // centeredSlidesBounds={true}
-          // centerInsufficientSlides={true}
-          // onSlideChange={onSlideChange}
         >
           {photos.map((photo, index) => (
             <SwiperSlide
