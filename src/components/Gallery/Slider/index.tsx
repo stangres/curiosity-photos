@@ -26,6 +26,12 @@ const breakpoints = {
   },
 };
 
+const navigation = {
+  prevEl: ".slider__prev-btn",
+  nextEl: ".slider__next-btn",
+  disabledClass: "slider__nav-btn-disabled",
+};
+
 interface SliderProps {
   photos: IPhoto[];
   onSlideClick: () => any;
@@ -40,10 +46,9 @@ const Slider: FC<SliderProps> = ({
   onCloseClick,
 }) => {
   const swiperRef = useRef({} as SwiperCore);
-  const currentSliderRef = useRef(0);
+  const currentSliderRef = useRef(1);
 
   useEffect(() => {
-    console.log("useEffect", currentSliderRef.current);
     swiperRef.current.slideTo(currentSliderRef.current, 0);
   }, [isFullscreen]);
 
@@ -63,19 +68,12 @@ const Slider: FC<SliderProps> = ({
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           slidesPerView={isFullscreen ? 1 : 3}
+          centeredSlides={true}
           breakpoints={breakpoints}
           freeMode={true}
           virtual={true}
           zoom={true}
-          navigation={
-            isFullscreen
-              ? {
-                  prevEl: ".slider__prev-btn",
-                  nextEl: ".slider__next-btn",
-                  disabledClass: "slider__nav-btn-disabled",
-                }
-              : false
-          }
+          navigation={isFullscreen ? navigation : false}
           slideToClickedSlide={true}
         >
           {photos.map((photo, index) => (
