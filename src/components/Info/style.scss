@@ -1,0 +1,108 @@
+@import "components/App/variables";
+
+.info {
+  &__container {
+    display: flex;
+    margin: 0 -45px;
+    width: 100%;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 45px;
+    //flex: 1 1 33.333%;
+
+    &_center {
+      .info__label {
+        align-self: center;
+      }
+    }
+  }
+
+  &__label {
+    opacity: 0.5;
+    font-family: $fontFamilySecondary;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 1.09px;
+    margin-bottom: 10px;
+    max-width: 160px;
+    vertical-align: bottom;
+  }
+
+  &__value {
+    background-image: linear-gradient(to right, #eee, #e3e3e3 51%, #fef0f0 98%);
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: 4.65px;
+    -webkit-background-clip: text;
+  }
+
+  &__measure-unit {
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: 4.65px;
+    color: #e01050;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 890px) {
+  .info {
+    &__container {
+      margin: 0 -30px;
+    }
+
+    &__column {
+      padding: 0 30px;
+    }
+  }
+}
+
+@media (max-width: $bp2) {
+  .info {
+    &__container {
+      margin: 0 -20px;
+    }
+
+    &__column {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media (max-width: $bp3) {
+  .info {
+    &__value {
+      font-size: 40px;
+      letter-spacing: 3.1px;
+    }
+
+    &__measure-unit {
+      font-size: 40px;
+      letter-spacing: 3.1px;
+    }
+  }
+}
+
+
+@media (max-width: $bp4) {
+  .info {
+    &__container {
+      flex-direction: column;
+      margin: -20px 0;
+    }
+
+    &__column {
+      padding: 20px 0;
+
+      &_center {
+        .info__label {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import "components/App/variables";
+
+.main {
+  &__container {
+  }
+
+  &__title {
+    width: 350px;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 3.87px;
+  }
+
+  &__text {
+    margin: -24px 0 0 190px;
+    width: 350px;
+    opacity: 0.6;
+    font-size: 16px;
+    line-height: 1.63;
+    letter-spacing: 1.24px;
+  }
+}
+
+@media (max-width: $bp3) {
+  .main {
+    &__title {
+      font-size: 40px;
+    }
+
+    &__text {
+      margin: 0;
+      //margin: 45px 0 0 50px;
+      //padding-right: 15px;
+      padding: 45px 0 0 50px;
+      //padding: 0 0 0 50px;
+      //position: static;
+      //padding: 0 15px 0 0 ;
+      //top: calc(100% + 45px);
+      //left: 50px;
+    }
+  }
+}
+
+@media (max-width: $bp4) {
+  .main {
+    &__title {
+      width: auto;
+    }
+
+    &__text {
+      width: auto;
+    }
+  }
+}

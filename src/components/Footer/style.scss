@@ -1,0 +1,19 @@
+@import "components/App/variables";
+
+.footer {
+  &__container {
+    height: 61px;
+  }
+}
+
+@media (max-width: $bp2) {
+  .footer__container {
+    height: 102px;
+  }
+}
+
+@media (max-width: $bp4) {
+  .footer__container {
+    height: 107px;
+  }
+}

@@ -1,0 +1,94 @@
+@import "fonts";
+@import "variables";
+@import "reset";
+
+body {
+  font-family: $fontFamily;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  background-color: #000;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+._lock ._container > .no-fullscreen {
+  display: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+._container {
+  max-width: $containerDesktopWidth;
+  width: 100%;
+  padding: 0 $containerDesktopPadding;
+  margin: 0 auto;
+}
+
+._container-center {
+  //padding-left: 285px;
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+//@media (max-width: 890px) {
+//  ._container-center {
+//    padding-left: 185px;
+//  }
+//}
+
+@media (max-width: $bp2) {
+  ._container {
+    position: absolute;
+    top: 255px;
+    left: 0;
+    padding: 0 $containerTabletPadding;
+  }
+
+  ._container-center {
+    //padding-left: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: $bp4) {
+  ._container {
+    top: 166px;
+    padding: 0 $containerPhonePadding;
+  }
+}
+
+.block {
+  &__info {
+    margin-top: 60px;
+  }
+
+  &__main {
+    margin-top: 130px;
+  }
+
+  &__gallery {
+    margin-top: 60px;
+  }
+
+  &__secondary {
+    margin-top: 60px;
+  }
+
+  &__footer {
+
+  }
+}
