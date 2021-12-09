@@ -15,8 +15,9 @@ body._lock {
   overflow: hidden;
 }
 
-._lock ._container > .no-fullscreen {
-  display: none;
+._lock ._container-page > ._container-main {
+  opacity: 0;
+  visibility: hidden;
 }
 
 #root {
@@ -30,34 +31,34 @@ body._lock {
   height: 100%;
 }
 
-._container {
+._container-page {
   max-width: $containerDesktopWidth;
   width: 100%;
   padding: 0 $containerDesktopPadding;
   margin: 0 auto;
 }
 
-._container-center {
+._container-main {
   max-width: 540px;
   width: 100%;
   margin: 0 auto;
 }
 
 @media (max-width: $bp2) {
-  ._container {
+  ._container-page {
     position: absolute;
     top: 255px;
     left: 0;
     padding: 0 $containerTabletPadding;
   }
 
-  ._container-center {
+  ._container-main {
     margin: 0;
   }
 }
 
 @media (max-width: $bp4) {
-  ._container {
+  ._container-page {
     top: 166px;
     padding: 0 $containerPhonePadding;
   }

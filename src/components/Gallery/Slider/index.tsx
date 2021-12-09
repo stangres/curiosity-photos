@@ -63,7 +63,9 @@ const Slider: FC<SliderProps> = ({
   };
 
   return (
-    <div className={classNames("slider", { slider_fullscreen: isFullscreen })}>
+    <div
+      className={classNames("slider", { "fullscreen-slider": isFullscreen })}
+    >
       <div className="slider__container">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}

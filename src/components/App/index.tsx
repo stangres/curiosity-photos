@@ -12,22 +12,26 @@ const App = () => {
   return (
     <div className="wrapper">
       <Header />
-      <div className="_container">
-        <div className="_container-center block__info no-fullscreen">
-          <Title />
-          <Info />
-        </div>
-        <div className="_container-center block__main no-fullscreen">
-          <Main />
+      <div className="_container-page">
+        <div className="_container-main">
+          <div className="block__info">
+            <Title />
+            <Info />
+          </div>
+          <div className="block__main">
+            <Main />
+          </div>
         </div>
         <div className="block__gallery">
           <Gallery />
         </div>
-        <div className="_container-center block__secondary no-fullscreen">
-          <Secondary />
-        </div>
-        <div className="block__footer no-fullscreen">
-          <Footer />
+        <div className="_container-main">
+          <div className="block__secondary">
+            <Secondary />
+          </div>
+          <div className="block__footer">
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

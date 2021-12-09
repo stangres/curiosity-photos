@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import Slider from "./Slider";
 import Spinner from "../Spinner";
@@ -12,20 +12,9 @@ import "./style.scss";
 // когда используется один компонент
 const Gallery = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const windowScrollYRef = useRef(0);
 
   // здесь можно было бы использовать, например react-query, но для данной задачи написал свой простой хук
   const state = useFetch<IPhoto[]>(photoService.getLatest, []);
-
-  useEffect(() => {
-    if (!isFullscreen) {
-      window.scroll({
-        top: windowScrollYRef.current,
-        behavior: "smooth",
-      });
-      windowScrollYRef.current = 0;
-    }
-  }, [isFullscreen]);
 
   const toggleFullscreenState = () => {
     document.body.classList.toggle("_lock");
@@ -34,7 +23,6 @@ const Gallery = () => {
 
   const onSlideClick = () => {
     if (!isFullscreen) {
-      windowScrollYRef.current = window.scrollY;
       toggleFullscreenState();
     }
   };
